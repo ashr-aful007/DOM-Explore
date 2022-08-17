@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>summery gitHub</title>
+</head>
+<body>
+     <h2 id="hide-text">My secrite info</h2>
+     <input id="input-fild" type="text">
+     <button id="delete-btn" disabled >Delete</button>
+     <script>
+
+          document.getElementById('input-fild').addEventListener('keyup', function(event){
+               const text = event.target.value;
+               const deletebutton = document.getElementById('delete-btn');
+               if(text === 'delete'){
+                    deletebutton.removeAttribute('disabled')
+               }
+               else{
+                    deletebutton.setAttribute('disabled', true)
+               }
+          })
+
+          //requerment 1 done
+          document.getElementById('delete-btn').addEventListener('click', function(){
+               const hideText = document.getElementById('hide-text');
+               hideText.style.display = 'none';
+          });
+     </script>
+</body>
+</html>
